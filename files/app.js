@@ -46,8 +46,30 @@ document.querySelector("h2");
 i.innerHTML="<strong>HTML doens't work !</strong>";
 i.style.color ="red";
 
-// Exercie 4 Création et supression
+// Exercie 4 Création d'éléments
 
-var j=
-document.querySelector("ul");
-document.createElement("li");
+var j = document.querySelector("ul");
+var element = document.createElement("li");
+var newElement = document.createTextNode("Mon meilleur ami est ");
+element.appendChild(newElement);
+
+var k = document.createElement("a");
+k.href = "http://google.com";
+k.innerHTML = "google";
+element.appendChild(k);
+document.querySelector('ul').appendChild(element);
+
+// Exercice 4  Création et suppression de plusieurs éléments
+var l = document.querySelector("ol");
+while (l.firstChild){
+	l.removeChild(l.firstChild)
+}
+
+var m = ["Silent Teacher","Code Monkey", "CodeCombat"];
+for (i=0 ; i<m.length ; i++){
+	let parent = document.createElement("li");
+	let child = document.createTextNode(m[i]);
+	parent.appendChild(child);
+	l.appendChild(parent);
+}
+
